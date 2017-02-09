@@ -1,0 +1,16 @@
+---
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: Search Owner by Lastname)
+!3 !style_caps(Test Scenario)
+|script           |string fixture                                    |
+|note             |!style_code(Given a service endpoint and lastname)|
+|$lastname=       |value of               |Davis                     |
+|$url=            |value of               |${OWNER_URL}              |
+|note             |!style_code(When I serach the lastname)           |
+|$lastname=       |value of               |Davis                     |
+|note             |!style_code(Then I should see)                    |
+|$response_status=|value of               |200                       |
+!3 !style_caps(Test Definition)
+!include -c <ServiceSuites.ApiExecutionLibrary.SearchOwnersLastname

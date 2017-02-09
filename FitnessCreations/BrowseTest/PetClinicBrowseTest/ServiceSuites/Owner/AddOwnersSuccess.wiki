@@ -1,0 +1,14 @@
+---
+LastModifyingUser: accenture
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: Add Owner Positive)
+!3 !style_caps(Test Scenario)
+!include -c <ServiceSuites.BrowseTestExecutionLibrary.AddOwner
+
+|script|browser test|
+ 
+|fetch data                                               |
+|OWNER_FIRST|OWNER_LAST|OWNER_ADDR |OWNER_CITY |OWNER_NUM |
+|Bruce      |Wayne     |Wayne Manor|Gotham City|0912345678|

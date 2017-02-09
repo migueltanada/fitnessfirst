@@ -1,0 +1,20 @@
+---
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: Add Owner)
+!3 !style_caps(Test Scenario)
+|script           |string fixture                       |
+|note             |!style_code(Given a service endpoint)|
+|$url=            |value of       |${OWNER_URL}         |
+|note             |!style_code(When I register with)    |
+|$address=        |value of       |PDC Global One       |
+|$city=           |value of       |Quezon               |
+|$firstname=      |value of       |Leezl                |
+|$lastname=       |value of       |Gonzales             |
+|$telephone=      |value of       |09876543211          |
+|$id=             |value of       |11                   |
+|note             |!style_code(Then I should see)       |
+|$response_status=|value of       |201                  |
+!3 !style_caps(Test Definition)
+!include -c <ServiceSuites.ApiExecutionLibrary.AddOwners

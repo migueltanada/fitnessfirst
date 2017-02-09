@@ -1,0 +1,6 @@
+---
+LastModifyingUser: accenture
+---
+!contents -R2 -g -p -f -h
+!define GRID_HUB {http://selenium-hub:4444/wd/hub}
+!define PET_CLINIC_URL {http://accenture:Accenture01@54.179.189.68/petclinic}

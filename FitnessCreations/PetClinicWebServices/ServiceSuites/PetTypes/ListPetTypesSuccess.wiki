@@ -1,0 +1,14 @@
+---
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: List Different Pet Types)
+!3 !style_caps(Test Scenario)
+|script           |string fixture                                |
+|note             |!style_code(Given a service endpoint)         |
+|$url=            |value of           |${PET_TYPES_URL}          |
+|note             |!style_code(When I need the list of pet types)|
+|note             |!style_code(Then I should see)                |
+|$response_status=|value of           |200                       |
+!3 !style_caps(Test Definition)
+!include -c <ServiceSuites.ApiExecutionLibrary.PetTypes

@@ -1,0 +1,16 @@
+---
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: Add Specialty Type)
+!3 !style_caps(Test Scenario)
+|script           |string fixture                                |
+|note             |!style_code(Given a service endpoint)         |
+|$url=            |value of           |${SPECIALTY_URL}          |
+|note             |!style_code(When I add another specialty with)|
+|$id=             |value of           |4                         |
+|$specialty_name= |value of           |oncology                  |
+|note             |!style_code(Then I should see)                |
+|$response_status=|value of           |201                       |
+!3 !style_caps(Test Definition)
+!include -c <ServiceSuites.ApiExecutionLibrary.AddSpecialty

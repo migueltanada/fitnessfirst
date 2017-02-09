@@ -1,0 +1,15 @@
+---
+LastModifyingUser: accenture
+Suites: negative
+Test
+---
+!2 !style_caps(Feature: Add Owner Negative)
+!3 !style_caps(Test Scenario)
+!include -c <ServiceSuites.BrowseTestExecutionLibrary.AddOwner
+
+|script     |browser test |	
+ 
+|fetch data                                                  |
+|OWNER_FIRST|OWNER_LAST|OWNER_ADDR |OWNER_CITY |OWNER_NUM|
+|Bruce      |Wayne     |Wayne Manor|Gotham City|CALLTHEBAT   |
+!3 !style_caps(Test Definition)

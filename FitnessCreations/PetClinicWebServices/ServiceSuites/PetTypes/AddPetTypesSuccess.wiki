@@ -1,0 +1,16 @@
+---
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: Add Another Pet Type)
+!3 !style_caps(Test Scenario)
+|script           |string fixture                               |
+|note             |!style_code(Given a service endpoint)        |
+|$url=            |value of          |${PET_TYPES_URL}          |
+|note             |!style_code(When I add another pet type with)|
+|$id=             |value of          |14                        |
+|$pet_name=       |value of          |lion                      |
+|note             |!style_code(Then I should see)               |
+|$response_status=|value of          |201                       |
+!3 !style_caps(Test Definition)
+!include -c <ServiceSuites.ApiExecutionLibrary.AddPetTypes

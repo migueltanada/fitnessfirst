@@ -1,0 +1,4 @@
+!1 Welcome to Pet Clinic Web Service Testing Wiki
+!contents -R3 -g -p -f -h
+!include -c >Installation
+!define TEST_SYSTEM {slim}

@@ -1,0 +1,43 @@
+!define BODY { {{{
+{
+  "address": "$address",
+  "city": "$city",
+  "firstName": "$firstname",
+  "id": 0,
+  "lastName": "$lastname",
+  "pets": [
+    {
+      "birthDate": "02-09-2017",
+      "id": 0,
+      "name": "Chewy",
+      "owner": {},
+      "type": {
+        "id": 0,
+        "name": "Choco"
+      },
+      "visits": [
+        {
+          "date": "2017/02/09",
+          "description": "cutie",
+          "id": 0,
+          "pet": {}
+        }
+      ]
+    }
+  ],
+  "telephone": "$telephone"
+}  
+}}} } 
+
+|script   |json http test                          |
+|set value|application/json|for header|Content-type|
+|post     |${BODY}         |to        |$url        |
+|show     |request                                 |
+|show     |response                                |
+|show     |response status                         |
+|check    |response status |$response_status       |
+|check    |json path       |.firstName|$firstname  |
+|check    |json path       |.lastName |$lastname   |
+|check    |json path       |.address  |$address    |
+|check    |json path       |.city     |$city       |
+|check    |json path       |.telephone|$telephone  |

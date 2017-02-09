@@ -1,0 +1,16 @@
+---
+LastModifyingUser: accenture
+Test
+---
+!2 !style_caps(Feature: Search Owner Last Name)
+!3 !style_caps(Test Scenario)
+|scenario|fetch data _     |OWNER_LAST                        |
+|note    |!style_code(Given a service endpoint)               |
+|open    |${PET_CLINIC_URL}                                   |
+|click   |Find owners                                         |
+|note    |!style_code(When I search with)                     |
+|enter   |@{OWNER_LAST}    |as   |xpath=//*[@name='lastName'] |
+|click   |xpath=//*[@id='search-owner-form']/div[2]/div/button|
+|note    |!style_code(Then I should see)                      |
+|show    |take screenshot  |result                            |
+!3 !style_caps(Test Definition)

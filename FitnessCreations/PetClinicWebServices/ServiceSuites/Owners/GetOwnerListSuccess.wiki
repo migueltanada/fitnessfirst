@@ -1,0 +1,14 @@
+---
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: Get Owner Lists)
+!3 !style_caps(Test Scenario)
+|script           |string fixture                                   |
+|note             |!style_code(Given a service endpoint)            |
+|$url=            |value of              |${OWNER_URL}              |
+|note             |!style_code(When I search for the list of owners)|
+|note             |!style_code(Then I should see)                   |
+|$response_status=|value of              |200                       |
+!3 !style_caps(Test Definition)
+!include -c <ServiceSuites.ApiExecutionLibrary.ListOwners

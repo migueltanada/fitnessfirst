@@ -1,0 +1,16 @@
+!define BODY { {{{
+{
+  "id": $id,
+  "name": "$specialty_name"
+}  
+}}} } 
+
+|script   |json http test                             |
+|set value|application/json|for header|Content-type   |
+|post     |${BODY}         |to        |$url           |
+|show     |request                                    |
+|show     |response                                   |
+|show     |response status                            |
+|check    |response status |$response_status          |
+|check    |json path       |.id       |$id            |
+|check    |json path       |.name     |$specialty_name|

@@ -1,0 +1,6 @@
+---
+LastModifyingUser: accenture
+---
+HSAC Configuration
+!path fixtures
+!path fixtures/*.jar

@@ -12,5 +12,4 @@ VOLUME /opt/fitnesse/
 
 COPY Resources/. /opt/fitnesse/
 
-#CMD java -jar fitnesse-standalone.jar -b base.properties -a passwords.txt
 ENTRYPOINT ["/opt/fitnesse/entrypoint.sh"]

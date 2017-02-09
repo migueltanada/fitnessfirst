@@ -1,0 +1,13 @@
+---
+LastModifyingUser: accenture
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: List Owner)
+|script|browser test                                        |
+|note  |!style_code(Given a service endpoint)               |
+|open  |${PET_CLINIC_URL}                                   |
+|click |Find owners                                         |
+|click |xpath=//*[@id='search-owner-form']/div[2]/div/button|
+|note  |!style_code(Then I should see)                      |
+|show  |take screenshot               |result               |

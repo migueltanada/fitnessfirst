@@ -1,0 +1,7 @@
+---
+LastModifyingUser: accenture
+---
+!1 Welcome to Testing Wiki Page
+!contents -R2 -g -p -f -h
+!include -c >Installation
+!define TEST_SYSTEM {slim}

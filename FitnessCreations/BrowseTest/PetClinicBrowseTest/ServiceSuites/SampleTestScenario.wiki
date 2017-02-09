@@ -1,0 +1,30 @@
+---
+LastModifyingUser: accenture
+Test
+---
+!*> Input
+!define URL {http://accenture:Accenture01@54.179.189.68/petclinic/owners/}
+!define SEARCHURL {http://accenture:Accenture01@54.179.189.68/petclinic/owners/find.html}
+*!
+
+!2 Add and Search users
+
+|script     |string fixture                                    |
+|note       |Given a page                                      |
+|$url=      |value of               |${URL}                    |
+|note       |When I register users                             |
+|note       |Then I should be able to search their last name in|
+|$searchUrl=|value of               |${SEARCHURL}              |
+
+
+!2 List users
+
+|script|string fixture                          |
+|note  |Given a page                            |
+|$url= |value of          |${SEARCHURL}         |
+|note  |When I click Find Owner                 |
+|note  |Then I should be to see a list of Owners|
+
+
+
+

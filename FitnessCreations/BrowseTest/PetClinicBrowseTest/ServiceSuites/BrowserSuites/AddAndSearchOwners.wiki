@@ -1,0 +1,62 @@
+---
+LastModifyingUser: accenture
+Test
+---
+!*> Input
+!define USERONE_NAME {John}
+!define USERONE_LASTNAME {Smith}
+!define USERONE_ADDRESS {USA}
+!define USERONE_CITY {New York}
+!define USERONE_NUMBER {55555}
+
+!define USERTWO_NAME {Bruce}
+!define USERTWO_LASTNAME {Wayne}
+!define USERTWO_ADDRESS {Wayne Manor}
+!define USERTWO_CITY {Gotham}
+!define USERTWO_NUMBER {111111}
+*!
+
+!2 !style_caps(Feature: Add and Search Owners)
+!3 !style_caps(Test Scenario)
+
+!4 !style_code(Given a page):
+
+${PET_CLINIC_URL}
+
+!4 !style_code(When I register):
+
+USER A: ${USERONE_NAME} ${USERONE_LASTNAME} 
+		with Address: ${USERONE_ADDRESS} ${USERONE_CITY} 
+        and Number:${USERONE_NUMBER}
+        
+USER B: ${USERTWO_NAME} ${USERTWO_LASTNAME} 
+		with Address: ${USERTWO_ADDRESS} ${USERTWO_CITY} 
+        and Number: ${USERTWO_NUMBER}
+
+!4 !style_code(Then I should be able to search their last name in the Search Page).
+
+!3 !style_caps(Test Definition)
+!*> Execution
+|scenario|fetch data _                                     |OWNER_FIRST, OWNER_LAST, OWNER_ADDR, OWNER_CITY, OWNER_NUM|
+|open    |${PET_CLINIC_URL}                                                                                          |
+|click   |Find owners                                                                                                 |
+|click   |Add Owner                                                                                                   |
+|enter   |@{OWNER_FIRST}                                   |as              |xpath=//*[@id='firstName']               |
+|enter   |@{OWNER_LAST}                                    |as              |xpath=//*[@id='lastName']                |
+|enter   |@{OWNER_ADDR}                                    |as              |xpath=//*[@id='address']                 |
+|enter   |@{OWNER_CITY}                                    |as              |xpath=//*[@id='city']                    |
+|enter   |@{OWNER_NUM}                                     |as              |xpath=//*[@id='telephone']               |
+|click   |xpath=//*[@id='add-owner-form']/div[2]/div/button|                                                          |
+|click   |Find owners                                                                                                 |
+|enter   |@{OWNER_LAST}                                    |as              |xpath=//*[@name='lastName']              |
+|click   |xpath=//*[@id='search-owner-form']/div[2]/div/button                                                        |
+|show    |take screenshot                                  |result                                                    |
+|ensure  |is visible                                       |xpath=//*[@id='vets']/tbody/tr[1]/td[1]                       |
+
+|script|browser test|
+ 
+|fetch data                                               |
+|OWNER_FIRST|OWNER_LAST|OWNER_ADDR |OWNER_CITY |OWNER_NUM |
+|${USERONE_NAME}      |${USERONE_LASTNAME}     |${USERONE_ADDRESS}|${USERONE_CITY}|${USERONE_NUMBER}|
+|${USERTWO_NAME}      |${USERTWO_LASTNAME}     |${USERTWO_ADDRESS}|${USERTWO_CITY}|${USERTWO_NUMBER}|
+*!

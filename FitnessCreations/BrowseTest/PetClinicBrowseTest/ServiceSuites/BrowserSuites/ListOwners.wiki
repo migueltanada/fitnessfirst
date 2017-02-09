@@ -1,0 +1,20 @@
+---
+LastModifyingUser: accenture
+Test
+---
+!2 !style_caps(Feature: List Owners)
+!3 !style_caps(Test Scenario)
+
+!2 List users
+
+|script|string fixture                          |
+|note  |Given a page                            |
+|$url= |value of       |${PET_CLINIC_URL}       |
+|note  |When I click Find Owner                 |
+|note  |Then I should be to see a list of Owners|
+
+|script|browser test                                        |
+|open  |$url                                                |
+|click |Find owners                                         |
+|click |xpath=//*[@id='search-owner-form']/div[2]/div/button|
+|show  |take screenshot               |result               |

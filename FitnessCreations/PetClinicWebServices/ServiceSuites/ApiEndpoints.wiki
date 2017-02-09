@@ -1,0 +1,11 @@
+---
+Static
+---
+!define PETCLINIC_SERVICE_DOMAIN {http://54.169.203.79:9966}
+!define OWNER_URL {${PETCLINIC_SERVICE_DOMAIN}/petclinic/api/owners}
+!define OWNER_ERROR_URL {${PETCLINIC_SERVICE_DOMAIN}/api/owners}
+!define OWNER_LASTNAME_URL {${OWNER_URL}/*/lastname}
+!define OWNER_ID_URL {${OWNER_URL}/*/lastname/${ownerId}}
+!define PET_URL {${PETCLINIC_SERVICE_DOMAIN}/petclinic/api/pets}
+!define PET_TYPES_URL {${PETCLINIC_SERVICE_DOMAIN}/petclinic/api/pettypes}
+!define SPECIALTY_URL {${PETCLINIC_SERVICE_DOMAIN}/petclinic/api/specialties}

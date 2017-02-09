@@ -1,0 +1,7 @@
+|script   |json http test                    |
+|set value|application/json|for header|Accept|
+|get from |$url                              |
+|show     |request                           |
+|show     |response                          |
+|show     |response status                   |
+|check    |response status |$response_status |

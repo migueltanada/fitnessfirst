@@ -1,0 +1,15 @@
+---
+LastModifyingUser: accenture
+Suites: positive
+Test
+---
+!2 !style_caps(Feature: Search Owner Positive)
+!3 !style_caps(Test Scenario)
+!include -c <ServiceSuites.BrowseTestExecutionLibrary.SearchOwnerLastName
+
+|script|browser test|
+ 
+|fetch data|
+|OWNER_LAST|
+|Wayne     |
+!3 !style_caps(Test Definition)

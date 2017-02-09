@@ -1,0 +1,9 @@
+---
+LastModifyingUser: accenture
+---
+|Import                                   |
+|nl.hsac.fitnesse.fixture.slim.web        |
+|nl.hsac.fitnesse.fixture.FixtureDebugTest|
+!include -c .BrowseTest.SuiteSetUp
+|script               |selenium driver setup|
+|connect to driver for|chrome|at|http://selenium-hub:4444/wd/hub|

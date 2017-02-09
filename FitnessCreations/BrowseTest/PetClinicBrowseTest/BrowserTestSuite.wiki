@@ -1,0 +1,43 @@
+---
+Edit: no
+Files: no
+LastModifyingUser: accenture
+Properties: no
+RecentChanges: no
+Refactor: no
+Search: no
+Static
+Suite: no
+Versions: no
+WhereUsed: no
+---
+!2 !style_caps(Feature: Add Owner)
+
+
+!3 !style_caps(Test Definition)
+|scenario|fetch data _                                     |OWNER_FIRST, OWNER_LAST, OWNER_ADDR, OWNER_CITY, OWNER_NUM|
+|open    |${PET_CLINIC_URL}                                                                                           |
+|click   |Find owners                                                                                                 |
+|click   |Add Owner                                                                                                   |
+|enter   |@{OWNER_FIRST}                                   |as              |xpath=//*[@id='firstName']               |
+|enter   |@{OWNER_LAST}                                    |as              |xpath=//*[@id='lastName']                |
+|enter   |@{OWNER_ADDR}                                    |as              |xpath=//*[@id='address']                 |
+|enter   |@{OWNER_CITY}                                    |as              |xpath=//*[@id='city']                    |
+|enter   |@{OWNER_NUM}                                     |as              |xpath=//*[@id='telephone']               |
+|click   |xpath=//*[@id='add-owner-form']/div[2]/div/button|                                                          |
+|click   |Find owners                                                                                                 |
+|enter   |@{OWNER_LAST}                                    |as              |xpath=//*[@name='lastName']              |
+|click   |xpath=//*[@id='search-owner-form']/div[2]/div/button                                                        |
+|show    |take screenshot                                  |result                                                    |
+|ensure  |is visible                                       |xpath=html/body/div[1]/div/a[2]                           |
+
+
+|script|browser test|
+ 
+|fetch data                                               |
+|OWNER_FIRST|OWNER_LAST|OWNER_ADDR |OWNER_CITY |OWNER_NUM |
+|Bruce      |Wayne     |Wayne Manor|Gotham City|CALLTHEBAT|
+|Clark      |Kent      |Smallville |Kansas     |091farm   |
+|Bruce      |Wayne     |Wayne Manor|Gotham City|0912345678|
+|Clark      |Kent      |Smallville |Kansas     |0912345678|
+
