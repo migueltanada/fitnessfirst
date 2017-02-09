@@ -12,4 +12,8 @@ VOLUME /opt/fitnesse/
 
 COPY Resources/. /opt/fitnesse/
 
+RUN mkdir -p  /opt/fitnesse/FitNesseRoot
+
+COPY FitnessCreations/. /opt/fitness/FitNesseRoot/
+
 ENTRYPOINT ["/opt/fitnesse/entrypoint.sh"]
