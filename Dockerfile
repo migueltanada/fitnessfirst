@@ -2,14 +2,15 @@ FROM migueltanada/centos-java:8
 
 MAINTAINER BATMAN
 
-RUN mkdir -p /apps/fitnesse
+RUN mkdir -p /opt/fitnesse
 
-WORKDIR /apps/fitnesse
+WORKDIR /opt/fitnesse
 
 EXPOSE 8080
 
-VOLUME /apps/fitnesse/
+VOLUME /opt/fitnesse/
 
-COPY Resources/fitnesse-standalone.jar /apps/fitnesse/
+COPY Resources/. /opt/fitnesse/
 
-CMD java -jar fitnesse-standalone.jar -p 8080
+#CMD java -jar fitnesse-standalone.jar -b base.properties -a passwords.txt
+ENTRYPOINT ["/opt/fitnesse/entrypoint.sh"]
