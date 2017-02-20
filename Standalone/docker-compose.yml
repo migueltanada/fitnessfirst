@@ -31,7 +31,9 @@ selenium-node-firefox:
 fitnesse:
   container_name: fitnesse
   restart: always
-  image: migueltanada/fitnessfirst:cyborg
+  image: migueltanada/fitnessfirst:deathstroke
   net: ${CUSTOM_NETWORK_NAME}
   ports:
     - "80:80" 
+  environment:
+    SELENIUM_HUB_URL: "${SELENIUM_HUB_URL}"
