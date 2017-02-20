@@ -2,7 +2,7 @@ petclinic:
   container_name: petclinic
   image: migueltanada/petclinic:latest
   ports:
-    - "9966:9966"
+    - "80:9966"
 
 mysql:
   container_name: mysql
