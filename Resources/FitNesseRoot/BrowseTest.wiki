@@ -1,7 +1,7 @@
 ---
 LastModifyingUser: accenture
 ---
-!1 Welcome to Testing Wiki Page
+!1 Pet Clinic Browser Tests
 !contents -R2 -g -p -f -h
 !include -c >Installation
 !define TEST_SYSTEM {slim}

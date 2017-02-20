@@ -6,4 +6,4 @@ LastModifyingUser: accenture
 |nl.hsac.fitnesse.fixture.FixtureDebugTest|
 !include -c .BrowseTest.SuiteSetUp
 |script               |selenium driver setup|
-|connect to driver for|chrome|at|http://selenium-hub:4444/wd/hub|
+|connect to driver for|chrome|at|${SELENIUM_HUB_URL}|
