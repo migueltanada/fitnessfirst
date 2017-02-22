@@ -1,11 +1,13 @@
 petclinic:
   container_name: petclinic
+  net: docker-network
   image: migueltanada/petclinic:latest
   ports:
     - "9966:9966"
 
 mysql:
   container_name: mysql
+  net: docker-network
   image: mysql:5.7.8
   ports:
    - "3306:3306"
